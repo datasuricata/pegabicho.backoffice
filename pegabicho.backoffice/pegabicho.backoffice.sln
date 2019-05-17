@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pegabicho.shared", "pegabicho.shared\pegabicho.shared.csproj", "{47000EC4-D849-4C6F-BD1B-E11F824DEEA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pegabicho.backoffice", "pegabicho.backoffice\pegabicho.backoffice.csproj", "{DA53CD4C-C015-4556-BACC-C7C50FBAD25D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47000EC4-D849-4C6F-BD1B-E11F824DEEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47000EC4-D849-4C6F-BD1B-E11F824DEEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47000EC4-D849-4C6F-BD1B-E11F824DEEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47000EC4-D849-4C6F-BD1B-E11F824DEEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA53CD4C-C015-4556-BACC-C7C50FBAD25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA53CD4C-C015-4556-BACC-C7C50FBAD25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA53CD4C-C015-4556-BACC-C7C50FBAD25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA53CD4C-C015-4556-BACC-C7C50FBAD25D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBAA4991-D9EA-428A-8FD6-549F22B1A64F}
+	EndGlobalSection
+EndGlobal
