@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace pegabicho.backoffice.Models {
+namespace pegabicho.backoffice.Models
+{
     public static class Enums {
         #region [ request ]
 
@@ -299,6 +297,17 @@ namespace pegabicho.backoffice.Models {
 
             [Display(Description = "Mestre dos Magos")] //[255]
             Root = (Admin | RoleAccess.Root)
+        }
+
+        #endregion
+
+        #region [ message ]
+
+        public enum MsgType
+        {
+            Success = 0,
+            Error = 1,
+            Info = 2,
         }
 
         #endregion

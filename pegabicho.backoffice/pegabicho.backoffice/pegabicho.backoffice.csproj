@@ -15,4 +15,10 @@
     <ProjectReference Include="..\pegabicho.shared\pegabicho.shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\_Notification.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

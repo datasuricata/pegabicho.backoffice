@@ -18,7 +18,7 @@ namespace pegabicho.backoffice.Request.Base {
             get {
                 switch (environment) {
                     case "local": return "http://localhost:11455/";
-                    case "dev": return "";
+                    case "dev": return "https://pegabicho-api-dev.azurewebsites.net/";
                     default: return "http://localhost:11455/";
                 }
             }

@@ -27,8 +27,8 @@ namespace pegabicho.backoffice.DI {
                 config.SlidingExpiration = true;
             });
 
-            services.AddScoped<IViewRender, ViewRender>();
-            services.AddScoped<WebService>();
+            services.AddTransient<IViewRender, ViewRender>();
+            services.AddTransient<WebService>();
         }
     }
 }

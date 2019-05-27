@@ -17,7 +17,6 @@
     <Folder Include="Arguments\Core\Pet\" />
     <Folder Include="Arguments\Core\User\" />
     <Folder Include="Components\" />
-    <Folder Include="Endpoints\Base\" />
   </ItemGroup>
 
 </Project>

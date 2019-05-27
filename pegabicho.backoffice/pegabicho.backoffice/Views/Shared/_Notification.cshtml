@@ -1,0 +1,30 @@
+@{
+    Layout = null;
+
+    var error = TempData["Error"];
+    var message = TempData["Message"];
+    var info = TempData["Info"];
+}
+
+
+@if (error != null)
+{
+<div class="alert alert-dismissible alert-danger" style="margin-top:25px;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <a href="#" class="alert-link">@error</a> tente novamente.
+</div>
+}
+@if (message != null)
+{
+<div class="alert alert-dismissible alert-success" style="margin-top:25px;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    @message
+</div>
+}
+@if (info != null)
+{
+<div class="alert alert-dismissible alert-info" style="margin-top:25px;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    @info
+</div>
+}

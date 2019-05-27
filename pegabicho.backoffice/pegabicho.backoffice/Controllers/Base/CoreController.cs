@@ -7,19 +7,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static pegabicho.backoffice.Models.Enums;
 
 namespace pegabicho.backoffice.Controllers {
     public class CoreController : Controller
     {
         #region [ attributes ]
-        protected readonly WebService WebService;
+        private readonly WebService WebService;
+
         private string Token { get; set; }
 
         #endregion
 
         #region [ ctor ]
-        public CoreController() {
-            WebService = (WebService)HttpContext.RequestServices.GetService(typeof(WebService));
+        public CoreController(WebService WebService) {
+            this.WebService = WebService;
         }
 
         #endregion
@@ -91,6 +93,31 @@ namespace pegabicho.backoffice.Controllers {
         #region [ session ]
         private void GetToken() {
             Token = HttpContext.Session.GetString("Token");
+        }
+
+        #endregion
+
+        #region [ notification ]
+
+        /// <summary>
+        /// set tempdata messages
+        /// </summary>
+        /// <param name="msg">Write your message</param>
+        /// <param name="msgType">Define your message type</param>
+        protected void SetMessage(string msg, MsgType msgType)
+        {
+            switch (msgType)
+            {
+                case MsgType.Success:
+                    TempData["Message"] = msg;
+                    break;
+                case MsgType.Error:
+                    TempData["Error"] = msg;
+                    break;
+                case MsgType.Info:
+                    TempData["Info"] = msg;
+                    break;
+            }
         }
 
         #endregion
