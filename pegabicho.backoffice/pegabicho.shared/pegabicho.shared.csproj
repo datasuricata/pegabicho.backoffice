@@ -5,14 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Arguments\Base\" />
-    <Folder Include="Arguments\Core\" />
+    <Compile Remove="Helpers\Security\**" />
+    <Compile Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Helpers\Security\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Helpers\Security\**" />
+    <None Remove="Interfaces\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Arguments\Core\Pet\" />
+    <Folder Include="Arguments\Core\User\" />
     <Folder Include="Components\" />
-    <Folder Include="Endpoints\Core\" />
-    <Folder Include="Helpers\Extensions\" />
-    <Folder Include="Helpers\Utils\" />
-    <Folder Include="Helpers\Security\" />
-    <Folder Include="Interfaces\Arguments\" />
+    <Folder Include="Endpoints\Base\" />
   </ItemGroup>
 
 </Project>
