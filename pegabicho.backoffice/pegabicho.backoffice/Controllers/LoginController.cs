@@ -34,8 +34,8 @@ namespace pegabicho.backoffice.Controllers
             catch (Exception e)
             {
                 SetMessage(e.Message, MsgType.Error);
-                TempData["ErrorMessage"] = e.Message;
-                return RedirectToAction("Login");
+                //TempData["Error"] = e.Message;
+                return View();
             }
         }
     }
