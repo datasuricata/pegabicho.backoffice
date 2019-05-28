@@ -29,11 +29,12 @@ namespace pegabicho.backoffice.Controllers
             {
                 DomainNotifyer.When(string.IsNullOrEmpty(login), "Login não pode ser vazio.");
                 var request = await Post<dynamic>(eLogin.customer, new { email = login, password = senha });
-                return View();
+                return RedirectToAction("Dashboard", "Home");
             }
             catch (Exception e)
             {
                 SetMessage(e.Message, MsgType.Error);
+                TempData["ErrorMessage"] = e.Message;
                 return RedirectToAction("Login");
             }
         }
