@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-pegabicho.backoffice-BD935056-6EF8-4750-ACBD-C702B42C8E29</UserSecretsId>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\bootstrap-datetimepicker.css" />
+    <Content Remove="wwwroot\js\bootstrap-datetimepicker.min.css" />
+    <Content Remove="wwwroot\js\tooltip.min" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

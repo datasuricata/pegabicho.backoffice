@@ -6,10 +6,71 @@
     <title>@ViewData["Title"] - pegabicho.backoffice</title>
 
     <environment include="Development">
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        @*<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
         <link href="~/css/style.bundle.css" rel="stylesheet" />
         <link href="~/css/all.css" rel="stylesheet" />
+        <link href="~/css/flaticon.css" rel="stylesheet" />
+        <link href="~/css/fullcalendar.bundle.css" rel="stylesheet" />
+        <link href="~/css/perfect-scrollbar.css" rel="stylesheet" />
+        <link href="~/css/tether.css" rel="stylesheet" />
+        <link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />*@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" media="all">
+        <script>
+            WebFont.load({
+                google: {
+                    "families": ["Poppins:300,400,500,600,700"]
+                },
+                active: function () {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+
+        <!--end::Fonts -->
+        <!--begin::Page Vendors Styles(used by this page) -->
+        <link href="~/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+
+        <!--end::Page Vendors Styles -->
+        <!--begin:: Global Mandatory Vendors -->
+        <link href="~/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+        <link href="~/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+
+        <!--end:: Global Mandatory Vendors -->
+        <!--begin:: Global Optional Vendors -->
+        <link href="~/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/owl.carousel/dist/owl.carousel.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/owl.carousel/dist/owl.theme.default.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+        <link href="~/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+        @*<link href="~/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />*@
+
+        <!--end:: Global Optional Vendors -->
+        <!--begin::Global Theme Styles(used by all pages) -->
+        <link href="~/css/demo2/style.bundle.css" rel="stylesheet" type="text/css" />
+
+        <!--end::Global Theme Styles -->
+        <!--begin::Layout Skins(used by all pages) -->
+        <!--end::Layout Skins -->
+        <link rel="shortcut icon" href="~/media/logos/favicon.ico" />
     </environment>
     <environment exclude="Development">
         @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -23,7 +84,7 @@
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="demo2/index.html">
-                <img alt="Logo" src="./assets/media/logos/logo-2-sm.png">
+                <img alt="Logo" src="~/media/logos/logo-2-sm.png">
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -45,54 +106,35 @@
                             <div class="kt-header__brand   kt-grid__item" id="kt_header_brand">
                                 <div class="kt-header__brand-logo">
                                     <a href="demo2/index.html">
-                                        <img alt="Logo" src="./assets/media/logos/logo-2.png" class="kt-header__brand-logo-default">
-                                        <img alt="Logo" src="./assets/media/logos/logo-2-sm.png" class="kt-header__brand-logo-sticky">
+                                        <img alt="Logo" src="~/media/logos/logo-2.png" class="kt-header__brand-logo-default">
+                                        <img alt="Logo" src="~/media/logos/logo-2-sm.png" class="kt-header__brand-logo-sticky">
                                     </a>
                                 </div>
                                 <div class="kt-header__brand-nav">
                                     <div class="dropdown">
                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            SAAS Customers
+                                            Cidades
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-md">
                                             <ul class="kt-nav kt-nav--bold kt-nav--md-space">
                                                 <li class="kt-nav__item">
                                                     <a class="kt-nav__link active" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon2-user"></i></span>
-                                                        <span class="kt-nav__link-text">Human Resources</span>
+                                                        <span class="kt-nav__link-icon"><i class="flaticon2-map"></i></span>
+                                                        <span class="kt-nav__link-text">Curitiba</span>
                                                     </a>
                                                 </li>
                                                 <li class="kt-nav__item">
                                                     <a class="kt-nav__link" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon-feed"></i></span>
-                                                        <span class="kt-nav__link-text">Customer Relationship</span>
+                                                        <span class="kt-nav__link-icon"><i class="flaticon2-map"></i></span>
+                                                        <span class="kt-nav__link-text">Florianópolis</span>
                                                     </a>
                                                 </li>
                                                 <li class="kt-nav__item">
                                                     <a class="kt-nav__link" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon2-settings"></i></span>
-                                                        <span class="kt-nav__link-text">Order Processing</span>
+                                                        <span class="kt-nav__link-icon"><i class="flaticon2-map"></i></span>
+                                                        <span class="kt-nav__link-text">Joinville</span>
                                                     </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a class="kt-nav__link" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon2-chart2"></i></span>
-                                                        <span class="kt-nav__link-text">Accounting</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__separator"></li>
-                                                <li class="kt-nav__item">
-                                                    <a class="kt-nav__link" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon-security"></i></span>
-                                                        <span class="kt-nav__link-text">Finance</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a class="kt-nav__link" href="#">
-                                                        <span class="kt-nav__link-icon"><i class="flaticon2-cup"></i></span>
-                                                        <span class="kt-nav__link-text">Administration</span>
-                                                    </a>
-                                                </li>
+                                                </li>                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -155,7 +197,7 @@
 
                                             <!-- begin:: Mycart -->
                                             <div class="kt-mycart">
-                                                <div class="kt-mycart__head kt-head" style="background-image: url(./assets/media/misc/bg-1.jpg);">
+                                                <div class="kt-mycart__head kt-head" style="background-image: url(~/media/misc/bg-1.jpg);">
                                                     <div class="kt-mycart__info">
                                                         <span class="kt-mycart__icon"><i class="flaticon2-shopping-cart-1 kt-font-success"></i></span>
                                                         <h3 class="kt-mycart__title">My Cart</h3>
@@ -183,7 +225,7 @@
                                                                 </div>
                                                             </div>
                                                             <a href="#" class="kt-mycart__pic">
-                                                                <img src="./assets/media/products/product9.jpg" title="">
+                                                                <img src="~/media/products/product9.jpg" title="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -205,7 +247,7 @@
                                                                 </div>
                                                             </div>
                                                             <a href="#" class="kt-mycart__pic">
-                                                                <img src="./assets/media/products/product13.jpg" title="">
+                                                                <img src="~/media/products/product13.jpg" title="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -227,7 +269,7 @@
                                                                 </div>
                                                             </div>
                                                             <a href="#" class="kt-mycart__pic">
-                                                                <img src="./assets/media/products/product16.jpg" title="">
+                                                                <img src="~/media/products/product16.jpg" title="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -249,7 +291,7 @@
                                                                 </div>
                                                             </div>
                                                             <a href="#" class="kt-mycart__pic">
-                                                                <img src="./assets/media/products/product15.jpg" title="" alt="">
+                                                                <img src="~/media/products/product15.jpg" title="" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -299,7 +341,7 @@
                                         <form>
 
                                             <!--begin: Head -->
-                                            <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(./assets/media/misc/bg-1.jpg)">
+                                            <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(~/media/misc/bg-1.jpg)">
                                                 <h3 class="kt-head__title">
                                                     User Notifications
                                                     &nbsp;
@@ -705,7 +747,7 @@
                                         <form>
 
                                             <!--begin: Head -->
-                                            <div class="kt-head kt-head--skin-dark" style="background-image: url(./assets/media/misc/bg-1.jpg)">
+                                            <div class="kt-head kt-head--skin-dark" style="background-image: url(~/media/misc/bg-1.jpg)">
                                                 <h3 class="kt-head__title">
                                                     User Quick Actions
                                                     <span class="kt-space-15"></span>
@@ -802,26 +844,26 @@
                                 <div class="kt-header__topbar-item kt-header__topbar-item--langs">
                                     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,10px">
                                         <span class="kt-header__topbar-icon">
-                                            <img class="" src="./assets/media/flags/012-uk.svg" alt="">
+                                            <img class="" src="~/media/flags/012-uk.svg" alt="">
                                         </span>
                                     </div>
                                     <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim">
                                         <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
                                             <li class="kt-nav__item kt-nav__item--active">
                                                 <a href="#" class="kt-nav__link">
-                                                    <span class="kt-nav__link-icon"><img src="./assets/media/flags/020-flag.svg" alt=""></span>
+                                                    <span class="kt-nav__link-icon"><img src="~/media/flags/020-flag.svg" alt=""></span>
                                                     <span class="kt-nav__link-text">English</span>
                                                 </a>
                                             </li>
                                             <li class="kt-nav__item">
                                                 <a href="#" class="kt-nav__link">
-                                                    <span class="kt-nav__link-icon"><img src="./assets/media/flags/016-spain.svg" alt=""></span>
+                                                    <span class="kt-nav__link-icon"><img src="~/media/flags/016-spain.svg" alt=""></span>
                                                     <span class="kt-nav__link-text">Spanish</span>
                                                 </a>
                                             </li>
                                             <li class="kt-nav__item">
                                                 <a href="#" class="kt-nav__link">
-                                                    <span class="kt-nav__link-icon"><img src="./assets/media/flags/017-germany.svg" alt=""></span>
+                                                    <span class="kt-nav__link-icon"><img src="~/media/flags/017-germany.svg" alt=""></span>
                                                     <span class="kt-nav__link-text">German</span>
                                                 </a>
                                             </li>
@@ -835,7 +877,7 @@
                                     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,10px" aria-expanded="false">
                                         <span class="kt-header__topbar-welcome">Hi,</span>
                                         <span class="kt-header__topbar-username">Sean</span>
-                                        <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_21.jpg">
+                                        <img class="kt-hidden" alt="Pic" src="~/media/users/300_21.jpg">
 
                                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden-">S</span>
@@ -843,9 +885,9 @@
                                     <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
 
                                         <!--begin: Head -->
-                                        <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
+                                        <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(~/media/misc/bg-1.jpg)">
                                             <div class="kt-user-card__avatar">
-                                                <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg">
+                                                <img class="kt-hidden" alt="Pic" src="~/media/users/300_25.jpg">
 
                                                 <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                                                 <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
@@ -961,7 +1003,7 @@
                                             </div>
                                         </li>
                                         <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
-                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Pages</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Usuários</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                             <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                                                 <ul class="kt-menu__subnav">
                                                     <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Create New Post</span></a></li>
@@ -996,7 +1038,7 @@
                                             </div>
                                         </li>
                                         <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
-                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Reports</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Pets</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                             <div class="kt-menu__submenu  kt-menu__submenu--fixed kt-menu__submenu--left" style="width:1000px">
                                                 <div class="kt-menu__subnav">
                                                     <ul class="kt-menu__content">
@@ -1048,7 +1090,7 @@
                                             </div>
                                         </li>
                                         <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
-                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Apps</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Administrativo</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                             <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                                                 <ul class="kt-menu__subnav">
                                                     <li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">eCommerce</span></a></li>
@@ -1115,7 +1157,7 @@
 
                 <!-- begin:: Footer -->
                 <div class="kt-footer  kt-footer--extended  kt-grid__item" id="kt_footer">
-                    <div class="kt-footer__top">
+                    @*<div class="kt-footer__top">
                         <div class="kt-container">
                             <div class="row">
                                 <div class="col-lg-4">
@@ -1165,23 +1207,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <div class="kt-footer__bottom">
                         <div class="kt-container">
                             <div class="kt-footer__wrapper">
                                 <div class="kt-footer__logo">
                                     <a href="demo2/index.html">
-                                        <img alt="Logo" src="./assets/media/logos/logo-2-sm.png">
+                                        <img alt="Logo" src="~/media/logos/logo-2-sm.png">
                                     </a>
                                     <div class="kt-footer__copyright">
-                                        2019&nbsp;©&nbsp;
-                                        <a href="http://keenthemes.com/metronic" target="_blank">Keenthemes</a>
+                                        @DateTime.Now.Year&nbsp;©&nbsp;
+                                        <a href="#" target="_blank">Pega Bicho BackOffice</a>
                                     </div>
                                 </div>
                                 <div class="kt-footer__menu">
-                                    <a href="http://keenthemes.com/metronic" target="_blank">Purchase Lisence</a>
-                                    <a href="http://keenthemes.com/metronic" target="_blank">Team</a>
-                                    <a href="http://keenthemes.com/metronic" target="_blank">Contact</a>
+                                    <a href="#" target="_blank">Termos e condições</a>
+                                    <a href="#" target="_blank">Equipe</a>
+                                    <a href="#" target="_blank">Contato</a>
                                 </div>
                             </div>
                         </div>
@@ -1214,7 +1256,7 @@
                 </div>
             </div>
         </nav>*@
-    <partial name="_CookieConsentPartial" />
+    @*<partial name="_CookieConsentPartial" />*@
 
     @*<div class="container body-content">
         <partial name="_Notification" />
@@ -1227,12 +1269,146 @@
     </div>*@
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
+        @*<script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/popper.js"></script>
+        <script src="~/js/sticky.min.js"></script>
+        <script src="~/js/scripts.bundle.js"></script>
+        <script src="~/js/moment.js"></script>
+        <script src="~/js/tooltip.js"></script>
+        <script src="~/js/bootstrap-select.js"></script>
+        <script src="~/js/select2.full.js"></script>
+        <script src="~/js/perfect-scrollbar.js"></script>
+        <script src="~/js/wNumb.js"></script>
+        <script src="~/js/jquery.form.min.js"></script>
+        <script src="~/js/jquery.blockUI.js"></script>
+        <script src="~/js/bootstrap-datepicker.js"></script>
+        <script src="~/js/bootstrap-datetimepicker.js"></script>
+        <script src="~/js/bootstrap-timepicker.js"></script>
+        <script src="~/js/jquery.bootstrap-touchspin.js"></script>
+        <script src="~/js/bootstrap-switch.js"></script>
+        <script src="~/js/bootstrap-markdown.js"></script>
+        <script src="~/js/bootstrap-markdown.init.js"></script>
+        <script src="~/js/Chart.bundle.js"></script>
+        <script src="~/js/typeahead.bundle.js"></script>
+        <script src="~/js/bootstrap-multiselectsplitter.js"></script>
+        <script src="~/js/bootstrap-switch.init.js"></script>
+        <script src="~/js/handlebars.js"></script>
+        <script src="~/js/ion.rangeSlider.js"></script>
+        <script src="~/js/nouislider.js"></script>
+        <script src="~/js/owl.carousel.js"></script>
+        <script src="~/js/autosize.js"></script>
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/raphael.js"></script>
+        <script src="~/js/morris.js"></script>
+        <script src="~/js/dashboard.js"></script>
+        <script src="~/js/dropzone.js"></script>
+        <script src="~/js/markdown.js"></script>*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+        <script>
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#374afb",
+                        "light": "#ffffff",
+                        "dark": "#282a3c",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822",
+                        "danger": "#fd3995"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
+                }
+            };
+        </script>
+
+        <!-- end::Global Config -->
+        <!--begin:: Global Mandatory Vendors -->
+        <script src="~/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="~/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+        <script src="~/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="~/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+
+        <!--end:: Global Mandatory Vendors -->
+        <!--begin:: Global Optional Vendors -->
+        <script src="~/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/bootstrap-datepicker.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/bootstrap-timepicker.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-switch/dist/js/bootstrap-switch.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/bootstrap-switch.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+        <script src="~/vendors/general/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
+        <script src="~/vendors/general/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
+        <script src="~/vendors/general/handlebars/dist/handlebars.js" type="text/javascript"></script>
+        <script src="~/vendors/general/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
+        <script src="~/vendors/general/inputmask/dist/inputmask/inputmask.date.extensions.js" type="text/javascript"></script>
+        <script src="~/vendors/general/inputmask/dist/inputmask/inputmask.numeric.extensions.js" type="text/javascript"></script>
+        <script src="~/vendors/general/nouislider/distribute/nouislider.js" type="text/javascript"></script>
+        <script src="~/vendors/general/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
+        <script src="~/vendors/general/autosize/dist/autosize.js" type="text/javascript"></script>
+        <script src="~/vendors/general/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/dropzone/dist/dropzone.js" type="text/javascript"></script>
+        <script src="~/vendors/general/summernote/dist/summernote.js" type="text/javascript"></script>
+        <script src="~/vendors/general/markdown/lib/markdown.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/bootstrap-markdown.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/bootstrap-notify/bootstrap-notify.min.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/bootstrap-notify.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+        <script src="~/vendors/general/jquery-validation/dist/additional-methods.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/jquery-validation.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/toastr/build/toastr.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/raphael/raphael.js" type="text/javascript"></script>
+        <script src="~/vendors/general/morris.js/morris.js" type="text/javascript"></script>
+        <script src="~/vendors/general/chart.js/dist/Chart.bundle.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/vendors/jquery-idletimer/idle-timer.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
+        <script src="~/vendors/general/counterup/jquery.counterup.js" type="text/javascript"></script>
+        <script src="~/vendors/general/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
+        <script src="~/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+        <script src="~/vendors/custom/js/vendors/sweetalert2.init.js" type="text/javascript"></script>
+        <script src="~/vendors/general/jquery.repeater/src/lib.js" type="text/javascript"></script>
+        <script src="~/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
+        <script src="~/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
+        <script src="~/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
+
+        <!--end:: Global Optional Vendors -->
+        <!--begin::Global Theme Bundle(used by all pages) -->
+        <script src="~/js/demo2/scripts.bundle.js" type="text/javascript"></script>
+
+        <!--end::Global Theme Bundle -->
+        <!--begin::Page Vendors(used by this page) -->
+        <script src="~/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+        <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
+        <script src="~/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
+
+        <!--end::Page Vendors -->
+        <!--begin::Page Scripts(used by this page) -->
+        <script src="~/js/demo2/pages/dashboard.js" type="text/javascript"></script>
+
+        <!--end::Page Scripts -->
     </environment>
     <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
@@ -1244,7 +1420,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>*@
     </environment>
 
     @RenderSection("Scripts", required: false)
